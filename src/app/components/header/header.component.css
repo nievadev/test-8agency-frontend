@@ -1,0 +1,49 @@
+header {
+  background-color: #FFD6A8;
+  box-shadow: 0px 5px 5px 5px rgb(204, 204, 204);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background: url(/assets/images/headerimage.svg) center center / cover no-repeat;
+  font-size: 0.6em;
+}
+
+.header-container__webinar {
+  font-family: 'Samsung Sharp Sans Medium';
+  color: #FFFFFF;
+  background-color: rgb(192, 81, 0);
+  font-size: 1.2em;
+  border: 0.2em solid rgb(192, 81, 0);
+  border-radius: 0.2em;
+  padding: 0.2em 1em;
+  margin: 2.4em 0 2em 0;
+  letter-spacing: 0.15em;
+}
+
+.header-container__welcome-text {
+  font-family: 'Samsung Sharp Sans Bold';
+  text-align: center;
+  color: #02363D;
+  line-height: 1.1em;
+  font-size: 1em;
+}
+
+.header-container__welcome-text h1 {
+  font-size: 3em;
+}
+
+.header-container__welcome-text h1 > span {
+  display: block;
+  margin-top: 0.5em;
+}
+
+.header-container__welcome-text__lower-text {
+  font-family: 'Samsung Sharp Sans Regular';
+  text-transform: uppercase;
+  font-size: 1.8em;
+  margin: 1.1em 0 2.2em 0;
+}

@@ -1,22 +1,21 @@
 @font-face {
   font-family: 'Samsung Sharp Sans Regular';
-  font-style: normal;
-  font-weight: normal;
   src: url(/assets/fonts/samsungsharpsans.woff);
 }
 
 @font-face {
   font-family: 'Samsung Sharp Sans Medium';
-  font-style: normal;
-  font-weight: normal;
   src: url(/assets/fonts/samsungsharpsans-medium.woff);
 }
 
 @font-face {
   font-family: 'Samsung Sharp Sans Bold';
-  font-style: normal;
-  font-weight: normal;
   src: url(/assets/fonts/samsungsharpsans-bold.woff);
+}
+
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  src: url(/assets/fonts/proximanova-regular-webfont.woff)
 }
 
 html {

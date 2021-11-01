@@ -1,0 +1,55 @@
+.brands {
+  margin: 3rem 0 0 0;
+  padding: 0;
+}
+
+.brands > ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.brands > ul > li {
+  display: flex;
+  justify-content: center;
+}
+
+.brands > ul > li > img {
+  width: inherit;
+  max-width: 110px;
+  align-self: center;
+  height: auto;
+}
+
+.presentation-info {
+  font-family: 'Proxima Nova Regular';
+}
+
+.presentation-info p {
+  margin: auto 0 2rem 0;
+  color: #405457;
+}
+
+.presentation-info p:last-of-type {
+  margin: auto 0 3.5rem 0;
+  color: #405457;
+}
+
+.presentation-info__speaker {
+  margin: 0 0 2.1rem 0;
+}
+
+.presentation-info__speaker img {
+  border-radius: 50%;
+  object-fit: contain;
+  width: 5rem;
+  height: 5rem;
+}
+
+.presentation-info__speaker__info__name {
+  font-size: 1.2em;
+  font-family: 'Samsung Sharp Sans Bold';
+}
+
+.presentation-info__speaker__info__role {
+  font-family: 'Samsung Sharp Sans Medium';
+}

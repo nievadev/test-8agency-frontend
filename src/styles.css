@@ -33,7 +33,4 @@ body {
 }
 
 @media only screen and (max-width : 1224px) {
-  html {
-    font-size: 0.8em;
-  }
 }

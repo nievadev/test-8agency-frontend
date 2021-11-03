@@ -1,0 +1,23 @@
+form h3 {
+  font-size: 1em;
+}
+
+form {
+  padding: 0;
+  font-family: 'Samsung Sharp Sans Medium';
+  color: rgb(2, 66, 75);
+}
+
+form label {
+  font-size: 0.85em;
+  margin: 0 0 0.15em 0;
+  width: 80%;
+}
+
+form input, form select {
+  width: 80%;
+  height: 3em;
+  border: 1px solid rgb(2, 66, 75);
+  border-radius: 3px;
+  margin: 0 0 1.3rem 0;
+}

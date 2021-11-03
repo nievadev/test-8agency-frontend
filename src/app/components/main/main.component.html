@@ -1,32 +1,31 @@
 <!-- NIEVATODO: Remove unused assets: fonts -->
 
 <main class="container">
-  <section class="brands">
-    <ul class="row flex-sm-nowrap">
-      <li class="col">
-        <img src="/assets/images/clusterfinanciero.png" alt="Foto de Cluster Financiero">
-      </li>
-      <li class="col">
-        <img src="/assets/images/asobanca.png" alt="Foto de Asobanca">
-      </li>
-      <li class="col">
-        <img src="/assets/images/ipbf.jpg" alt="Foto de Ipbf">
-      </li>
-      <div class="w-100 d-sm-none d-block"></div>
-      <li class="col">
-        <img src="/assets/images/hightelecom.png" alt="Foto de Hightelecom">
-      </li>
-      <li class="col">
-        <img src="/assets/images/ebanx.png" alt="Foto de Ebanx">
-      </li>
-      <li class="col">
-        <img src="/assets/images/zendesk.png" alt="Foto de Zendesk">
-      </li>
-      <div class="d-none d-lg-block col-lg-5 invisible">.</div>
-    </ul>
-  </section>
   <section class="row">
-    <article class="presentation-info col-lg-6">
+    <article class="presentation-info col-lg-7">
+      <section class="brands mt-4 mt-md-5 mb-5 mb-md-3">
+        <ul class="row">
+          <li class="col">
+            <img src="/assets/images/clusterfinanciero.png" alt="Foto de Cluster Financiero">
+          </li>
+          <li class="col">
+            <img src="/assets/images/asobanca.png" alt="Foto de Asobanca">
+          </li>
+          <li class="col">
+            <img src="/assets/images/ipbf.jpg" alt="Foto de Ipbf">
+          </li>
+          <div class="w-100 d-block d-md-none"></div>
+          <li class="col">
+            <img src="/assets/images/hightelecom.png" alt="Foto de Hightelecom">
+          </li>
+          <li class="col">
+            <img src="/assets/images/ebanx.png" alt="Foto de Ebanx">
+          </li>
+          <li class="col">
+            <img src="/assets/images/zendesk.png" alt="Foto de Zendesk">
+          </li>
+        </ul>
+      </section>
       <p>
         Te invitan este webinar, donde trataremos la temática de cómo humanizar la experiencia del cliente de Banca y Seguros en el nuevo entorno digital.
       </p>
@@ -37,7 +36,7 @@
         Escucha de primera mano la voz de nuestros especialistas:
       </p>
       <div>
-        <div *ngFor="let specialist of specialists" class="presentation-info__speaker d-flex flex-nowrap">
+        <div *ngFor="let specialist of (specialists$ | async)" class="presentation-info__speaker d-flex flex-nowrap">
           <img [src]="specialist.imageAsset" alt="Foto de perfil de {{ specialist.name }}" class="align-self-center">
           <div class="presentation-info__speaker__info">
             <p class="presentation-info__speaker__info__name mx-4 my-2">{{ specialist.name }}</p>
@@ -46,6 +45,6 @@
         </div>
       </div>
     </article>
-    <app-attendee-form></app-attendee-form>
+    <app-attendee-form class="col-lg-5"></app-attendee-form>
   </section>
 </main>

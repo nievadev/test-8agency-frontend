@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CountryDataStoreService } from 'src/app/services/country-data-store.service';
+
 
 @Component({
   selector: 'app-attendee-form',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./attendee-form.component.css']
 })
 export class AttendeeFormComponent implements OnInit {
+  countries$ = this.countryDataStore.getCountries();
 
-  constructor() { }
+  constructor(private countryDataStore: CountryDataStoreService) { }
 
   ngOnInit(): void {
   }

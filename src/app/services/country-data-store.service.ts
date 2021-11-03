@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 type Country = {name: string};
 
-type Location = {country: string};
+export type Location = {country: string};
 
 @Injectable({
   providedIn: 'root'

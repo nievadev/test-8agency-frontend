@@ -12,7 +12,7 @@
 
   <label for="country">País</label><br>
   <select name="country" id="country">
-    <option *ngFor="let country of countries$ | async" value="">{{ country.name }}</option>
+    <option *ngFor="let country of countries$ | async" value="" [selected]="getSelectedString(country.name)">{{ country.name }}</option>
   </select>
 
   <label for="phone-number">Número de teléfono</label><br>

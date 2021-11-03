@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CountryDataStoreService } from 'src/app/services/country-data-store.service';
+import { CountryDataStoreService, Location } from 'src/app/services/country-data-store.service';
 
 
 @Component({
@@ -9,10 +9,19 @@ import { CountryDataStoreService } from 'src/app/services/country-data-store.ser
 })
 export class AttendeeFormComponent implements OnInit {
   countries$ = this.countryDataStore.getCountries();
+  location$ = this.countryDataStore.getLocation();
+  location?: Location;
 
   constructor(private countryDataStore: CountryDataStoreService) { }
 
   ngOnInit(): void {
+    this.location$.subscribe(res => {
+      this.location = res;
+    })
+  }
+
+  getSelectedString(currentCountry: string) {
+    return currentCountry == this.location!.country ? 'selected' : '';
   }
 
 }

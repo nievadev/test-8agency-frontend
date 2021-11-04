@@ -1,0 +1,19 @@
+footer img {
+  width: 51.5px;
+  margin: 0 2px;
+}
+
+footer > div > p {
+  position: relative;
+  padding: 0 0 0 1.2em;
+  color: #405457;
+  font-family: 'Proxima Nova Regular';
+  margin: 0;
+}
+
+footer > div > p::before {
+  content: '@';
+  position: absolute;
+  top: 0;
+  left: 0;
+}

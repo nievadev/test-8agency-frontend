@@ -24,13 +24,12 @@
 }
 
 .presentation-info p {
-  margin: auto 0 2rem 0;
+  margin: auto 0 2em 0;
   color: #405457;
 }
 
-.presentation-info p:last-of-type {
-  margin: auto 0 3.5rem 0;
-  color: #405457;
+.presentation-info__speakers-list {
+  margin: 3.2rem 0 0 0;
 }
 
 .presentation-info__speaker {

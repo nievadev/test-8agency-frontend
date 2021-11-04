@@ -35,7 +35,7 @@
       <p>
         Escucha de primera mano la voz de nuestros especialistas:
       </p>
-      <div>
+      <div class="presentation-info__speakers-list">
         <div *ngFor="let specialist of (specialists$ | async)" class="presentation-info__speaker d-flex flex-nowrap">
           <img [src]="specialist.imageAsset" alt="Foto de perfil de {{ specialist.name }}" class="align-self-center">
           <div class="presentation-info__speaker__info">
@@ -44,7 +44,37 @@
           </div>
         </div>
       </div>
+      <p>
+        Participa e inspírate para innovar y mejorar la interacción entre clientes y marcas con historias de éxito de empresas del ámbito financiero en América Latina.
+      </p>
+      <p>
+        ¡Te esperamos!
+      </p>
     </article>
     <app-attendee-form class="col-lg-5"></app-attendee-form>
+  </section>
+  <section class="brands mt-5">
+    <ul class="row">
+      <li class="col">
+        <img src="/assets/images/clusterfinanciero.png" alt="Foto de Cluster Financiero">
+      </li>
+      <li class="col">
+        <img src="/assets/images/asobanca.png" alt="Foto de Asobanca">
+      </li>
+      <li class="col">
+        <img src="/assets/images/ipbf.jpg" alt="Foto de Ipbf">
+      </li>
+      <div class="w-100 d-block d-md-none"></div>
+      <li class="col">
+        <img src="/assets/images/hightelecom.png" alt="Foto de Hightelecom">
+      </li>
+      <li class="col">
+        <img src="/assets/images/ebanx.png" alt="Foto de Ebanx">
+      </li>
+      <li class="col">
+        <img src="/assets/images/zendesk.png" alt="Foto de Zendesk">
+      </li>
+      <div class="d-none d-lg-block col-5"></div>
+    </ul>
   </section>
 </main>

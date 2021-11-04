@@ -20,6 +20,8 @@ form input, form select {
   border: 1px solid rgb(2, 66, 75);
   border-radius: 3px;
   margin: 0 0 1.3rem 0;
+  font-size: 0.9em;
+  padding: 0 0.6em;
 }
 
 form input[name='work-position'] {

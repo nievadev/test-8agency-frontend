@@ -2,13 +2,13 @@
   <h3 class="text-center pt-lg-5 mb-5">¡Inscríbete y reserva tu lugar ahora!</h3>
 
   <label for="name">Nombre</label><br>
-  <input type="text" name="name" id="name" [(ngModel)]="model.name" required>
+  <input type="text" name="name" id="name" placeholder="Martín" [(ngModel)]="model.name" required>
 
   <label for="last-name">Apellido</label><br>
-  <input type="text" name="last-name" id="last-name" [(ngModel)]="model.last_name" required>
+  <input type="text" name="last-name" id="last-name" placeholder="Nieva" [(ngModel)]="model.last_name" required>
 
   <label for="work-mail">Correo electrónico del trabajo</label><br>
-  <input type="email" name="work-mail" id="work-mail" [(ngModel)]="model.work_email" required>
+  <input type="email" name="work-mail" id="work-mail" placeholder="martinjafactor@gmail.com" [(ngModel)]="model.work_email" required>
 
   <label for="country">País</label><br>
   <select name="country" id="country" [(ngModel)]="model.country" required>
@@ -16,10 +16,10 @@
   </select>
 
   <label for="phone-number">Número de teléfono</label><br>
-  <input type="number" name="phone-number" id="phone-number" [(ngModel)]="model.phone_number" required>
+  <input type="number" name="phone-number" id="phone-number" placeholder="2914141794" [(ngModel)]="model.phone_number" required>
 
   <label for="work-position">Puesto de trabajo</label><br>
-  <input type="text" name="work-position" id="work-position" [(ngModel)]="model.work_position" required>
+  <input type="text" name="work-position" id="work-position" placeholder="Ingeniero de Software, aplicaciones web" [(ngModel)]="model.work_position" required>
 
   <button type="submit">Inscríbete</button>
 </form>

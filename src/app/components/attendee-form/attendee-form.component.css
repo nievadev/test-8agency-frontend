@@ -21,3 +21,12 @@ form input, form select {
   border-radius: 3px;
   margin: 0 0 1.3rem 0;
 }
+
+form input[name="work-position"] {
+  margin: 0 0 2.15rem 0;
+}
+
+form input:last-of-type {
+  background-color: rgb(2, 66, 75);
+  color: white;
+}

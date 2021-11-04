@@ -14,10 +14,10 @@ export class CountryDataStoreService {
   constructor(private http: HttpClient) { }
 
   getCountries(): Observable<Array<Country>> {
-    return this.http.get<Array<Country>>(environment.apiUrl + 'countries/');
+    return this.http.get<Array<Country>>(environment.apiUrl + '/countries/');
   }
 
   getLocation() {
-    return this.http.get<Location>('http://ip-api.com/json/');
+    return this.http.get<Location>('http://ip-api.com/json');
   }
 }

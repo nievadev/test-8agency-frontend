@@ -1,36 +1,107 @@
 <form [formGroup]="attendeeForm" class="mt-3 mt-lg-5 d-flex flex-column align-items-center" (ngSubmit)="onSubmit()">
+
+
+
   <h3 class="text-center pt-lg-5 mb-5">¡Inscríbete y reserva tu lugar ahora!</h3>
 
-  <label for="name">Nombre</label><br>
-  <input type="text" name="name" id="name" placeholder="Martín" formControlName="name" required>
 
-  <label for="last-name">Apellido</label><br>
-  <input formControlName="lastName" type="text" name="last-name" id="last-name" placeholder="Nieva" required>
 
-  <label for="work-email">Correo electrónico del trabajo</label><br>
-  <input formControlName="workEmail" type="email" name="work-email" id="work-email" placeholder="martinjafactor@gmail.com" required>
+  <div>
+    <label for="name">Nombre</label><br>
 
-  <label for="country">País</label><br>
-  <select formControlName="country" name="country" id="country" required>
-    <option
-      *ngFor="let country of countries$ | async"
-      value="{{ country.name }}"
-      [selected]="location!.country == country.name ? 'selected' : ''"
+    <input type="text" name="name" id="name" placeholder="Martín" formControlName="name" required>
+
+    <attendee-invalid-message
+      [condition]="controls.name.touched && controls.name.invalid"
+      message="The name field is required"
     >
-      {{ country.name }}
-    </option>
-  </select>
+    </attendee-invalid-message>
+  </div>
 
-  <label for="phone-number">Número de teléfono</label><br>
-  <input type="number" name="phone-number" id="phone-number" placeholder="2914141794" formControlName="phoneNumber" required>
 
-  <label for="work-position">Puesto de trabajo</label><br>
-  <input formControlName="workPosition" type="text" name="work-position" id="work-position" placeholder="Ingeniero de Software, aplicaciones web" required>
 
-  <button type="submit" [disabled]="!attendeeForm.valid">Inscríbete</button>
+  <div>
+    <label for="last-name">Apellido</label><br>
 
-  <div *ngIf="isDevMode()">
+    <input formControlName="lastName" type="text" name="last-name" id="last-name" placeholder="Nieva" required>
+
+    <attendee-invalid-message
+      [condition]="controls.lastName.touched && controls.lastName.invalid"
+      message="The last name field is required"
+    >
+    </attendee-invalid-message>
+  </div>
+
+
+
+  <div>
+    <label for="work-email">Correo electrónico del trabajo</label><br>
+
+    <input formControlName="workEmail" type="email" name="work-email" id="work-email" placeholder="martinjafactor@gmail.com" required>
+
+    <!-- NIEVATODO: Check how to take class.mt-3 out of this component -->
+    <attendee-invalid-message
+      [condition]="controls.workEmail.touched && controls.workEmail.invalid"
+      message="The work email field is required"
+    >
+    </attendee-invalid-message>
+  </div>
+
+
+
+  <div>
+    <label for="country">País</label><br>
+
+    <select formControlName="country" name="country" id="country" required>
+      <option
+        *ngFor="let country of countries$ | async"
+        value="{{ country.name }}"
+      >
+        {{ country.name }}
+      </option>
+    </select>
+
+    <attendee-invalid-message
+      [condition]="controls.country.touched && controls.country.invalid"
+      message="The country field is required"
+    >
+    </attendee-invalid-message>
+  </div>
+
+
+
+  <div>
+    <label for="phone-number">Número de teléfono</label><br>
+
+    <input type="number" name="phone-number" id="phone-number" placeholder="2914141794" formControlName="phoneNumber" required>
+
+    <attendee-invalid-message
+      [condition]="controls.phoneNumber.touched && controls.phoneNumber.invalid"
+      message="The phone number field is required"
+    >
+    </attendee-invalid-message>
+  </div>
+
+
+
+  <div>
+    <label for="work-position">Puesto de trabajo</label><br>
+
+    <input formControlName="workPosition" type="text" name="work-position" id="work-position" placeholder="Ingeniero de Software, aplicaciones web" required>
+
+    <attendee-invalid-message
+      [condition]="controls.workPosition.touched && controls.workPosition.invalid"
+      message="The work position field is required"
+    >
+    </attendee-invalid-message>
+  </div>
+
+
+
+  <button type="submit" [disabled]="!attendeeForm.valid" class="submit-button" [class.submit-button--disabled]="!attendeeForm.valid">Inscríbete</button>
+
+  <article *ngIf="isDevMode()">
     {{ attendeeForm.value | json }}
     {{ attendeeForm.status }}
-  </div>
+  </article>
 </form>

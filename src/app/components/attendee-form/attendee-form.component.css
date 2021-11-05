@@ -8,58 +8,66 @@ form {
   color: rgb(2, 66, 75);
 }
 
-form label {
-  font-size: 0.85em;
-  margin: 0 0 0.15em 0;
-  width: 80%;
-}
-
-form input, form select {
-  width: 80%;
-  height: 3em;
-  border: 1px solid rgb(2, 66, 75);
-  border-radius: 3px;
+form > div {
   margin: 0 0 1.3rem 0;
-  font-size: 0.9em;
-  padding: 0 0.6em;
 }
 
-form input[name='work-position'] {
+form > div, form > button {
+  width: 80%;
+}
+
+form > div:last-of-type {
   margin: 0 0 2.2rem 0;
 }
 
-form button[type='submit'] {
-  width: 80%;
+form label {
+  font-size: 0.85em;
+  margin: 0 0 0.15em 0;
+}
+
+form input, form select {
+  height: 3em;
+  border: 1px solid rgb(2, 66, 75);
+  border-radius: 3px;
+  font-size: 0.9em;
+  padding: 0 0.6em;
+  width: 100%;
+}
+
+.submit-button {
   border: none;
   background-color: white;
   position: relative;
   color: white;
   z-index: 1;
   padding: 0.76em 0;
-  transition: color 0.15s ease-out;
-}
-
-form button[type='submit']:hover {
-  color: rgb(2, 66, 75);
+  border: 3px solid rgb(255, 255, 255);
+  transition: color 0.15s ease-out, border 0.15s ease-out;
   cursor: pointer;
 }
 
-form button[type='submit']:hover::before {
+.submit-button:hover {
+  color: rgb(2, 66, 75);
+  border: 3px solid rgb(2, 66, 75);
+}
+
+.submit-button:hover::before {
   width: 100%;
 }
 
-form button[type='submit']::after {
+.submit-button::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  transition: background-color 0.15s;
   background-color: rgb(2, 66, 75);
   z-index: -2;
 }
 
-form button[type='submit']::before {
+.submit-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -69,4 +77,22 @@ form button[type='submit']::before {
   transition: width 0.15s ease-out;
   background-color: white;
   z-index: -1;
+}
+
+.submit-button--disabled {
+  cursor: not-allowed;
+  color: rgb(172, 172, 172);
+}
+
+.submit-button--disabled:hover {
+  color: rgb(172, 172, 172);
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.submit-button--disabled::after {
+  background-color:rgb(67, 78, 80);
+}
+
+.submit-button--disabled:hover::before {
+  width: 0%;
 }

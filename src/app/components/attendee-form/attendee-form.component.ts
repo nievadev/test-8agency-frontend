@@ -12,15 +12,16 @@ import { isDevMode } from '@angular/core';
 export class AttendeeFormComponent implements OnInit {
   countries$ = this.countryDataStore.getCountries();
   location$ = this.countryDataStore.getLocation();
-  location: Location = {country: ''};
+  phoneNumberPattern = isDevMode() ? '' : '^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$';
   attendeeForm = this.fb.group({
     name: ['', [Validators.required]],
     lastName: ['', [Validators.required]],
     workEmail: ['', [Validators.required]],
     country: ['', [Validators.required]],
-    phoneNumber: ['', [Validators.required, Validators.pattern("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$")]],
+    phoneNumber: ['', [Validators.required, Validators.pattern(this.phoneNumberPattern)]],
     workPosition: ['', [Validators.required]]
   });
+  controls = this.attendeeForm.controls;
 
   isDevMode = isDevMode;
 
@@ -28,11 +29,9 @@ export class AttendeeFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.location$.subscribe(res => {
-      this.location = res;
-
       this.attendeeForm.patchValue({
-        country: this.location.country
-      })
+        country: res.country
+      });
     })
   }
 

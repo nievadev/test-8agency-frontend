@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { AttendeeFormComponent } from './components/attendee-form/attendee-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { InvalidMessageComponent } from './components/invalid-message/invalid-message.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     MainComponent,
     AttendeeFormComponent,
-    FooterComponent
+    FooterComponent,
+    InvalidMessageComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ export class AttendeesService {
 
   constructor(private http: HttpClient) { }
 
-  // NIEVATODO: Note that I'm aware that there is no pagination
+  // NIEVATODO: Note that I'm aware that there is not even pagination
   getAttendees(): Observable<Array<Attendee>> {
     return this.http.get<Array<Attendee>>(environment.apiUrl + '/attendees/');
   }

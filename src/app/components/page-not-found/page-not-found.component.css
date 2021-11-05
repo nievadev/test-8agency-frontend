@@ -1,0 +1,14 @@
+:host {
+  flex: 1;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main p {
+  font-size: 2em;
+}

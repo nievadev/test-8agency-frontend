@@ -52,3 +52,7 @@
 .presentation-info__speaker__info__role {
   font-family: 'Samsung Sharp Sans Medium';
 }
+
+:host {
+  flex: 1;
+}

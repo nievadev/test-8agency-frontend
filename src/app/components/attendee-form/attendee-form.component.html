@@ -1,25 +1,36 @@
-<form class="mt-3 mt-lg-5 d-flex flex-column align-items-center" (ngSubmit)="onSubmit()">
+<form [formGroup]="attendeeForm" class="mt-3 mt-lg-5 d-flex flex-column align-items-center" (ngSubmit)="onSubmit()">
   <h3 class="text-center pt-lg-5 mb-5">¡Inscríbete y reserva tu lugar ahora!</h3>
 
   <label for="name">Nombre</label><br>
-  <input type="text" name="name" id="name" placeholder="Martín" [(ngModel)]="model.name" required>
+  <input type="text" name="name" id="name" placeholder="Martín" formControlName="name" required>
 
   <label for="last-name">Apellido</label><br>
-  <input type="text" name="last-name" id="last-name" placeholder="Nieva" [(ngModel)]="model.last_name" required>
+  <input formControlName="lastName" type="text" name="last-name" id="last-name" placeholder="Nieva" required>
 
-  <label for="work-mail">Correo electrónico del trabajo</label><br>
-  <input type="email" name="work-mail" id="work-mail" placeholder="martinjafactor@gmail.com" [(ngModel)]="model.work_email" required>
+  <label for="work-email">Correo electrónico del trabajo</label><br>
+  <input formControlName="workEmail" type="email" name="work-email" id="work-email" placeholder="martinjafactor@gmail.com" required>
 
   <label for="country">País</label><br>
-  <select name="country" id="country" [(ngModel)]="model.country" required>
-    <option *ngFor="let country of countries$ | async" value="{{ country.name }}">{{ country.name }}</option>
+  <select formControlName="country" name="country" id="country" required>
+    <option
+      *ngFor="let country of countries$ | async"
+      value="{{ country.name }}"
+      [selected]="location!.country == country.name ? 'selected' : ''"
+    >
+      {{ country.name }}
+    </option>
   </select>
 
   <label for="phone-number">Número de teléfono</label><br>
-  <input type="number" name="phone-number" id="phone-number" placeholder="2914141794" [(ngModel)]="model.phone_number" required>
+  <input type="number" name="phone-number" id="phone-number" placeholder="2914141794" formControlName="phoneNumber" required>
 
   <label for="work-position">Puesto de trabajo</label><br>
-  <input type="text" name="work-position" id="work-position" placeholder="Ingeniero de Software, aplicaciones web" [(ngModel)]="model.work_position" required>
+  <input formControlName="workPosition" type="text" name="work-position" id="work-position" placeholder="Ingeniero de Software, aplicaciones web" required>
 
-  <button type="submit">Inscríbete</button>
+  <button type="submit" [disabled]="!attendeeForm.valid">Inscríbete</button>
+
+  <div *ngIf="isDevMode()">
+    {{ attendeeForm.value | json }}
+    {{ attendeeForm.status }}
+  </div>
 </form>

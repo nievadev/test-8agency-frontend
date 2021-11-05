@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InvalidMessageComponent } from './components/invalid-message/invalid-message.component';
 import { AttendeesListComponent } from './components/attendees-list/attendees-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     FooterComponent,
     InvalidMessageComponent,
     AttendeesListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

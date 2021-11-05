@@ -1,1 +1,6 @@
-<p>attendees-list works!</p>
+<main class="container pt-5">
+  <div class="invisible mt-3">
+    .
+  </div>
+  <div *ngFor="let attendee of attendees$ | async">{{ attendee.name }}</div>
+</main>

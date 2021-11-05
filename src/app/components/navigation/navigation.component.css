@@ -7,8 +7,6 @@ nav ul li:hover {
 }
 
 nav ul li {
-  font-size: 1.3em;
-  padding: 0.5em 1.1em 0.5em 1.1em;
   transition: background-color 0.15s;
   border-radius: 3px;
 }
@@ -17,6 +15,11 @@ nav ul li a {
   color: rgb(2, 66, 75);
   font-family: 'Proxima Nova Regular';
   text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 1.3em;
+  padding: 0.5em 1.1em 0.5em 1.1em;
 }
 
 .active {

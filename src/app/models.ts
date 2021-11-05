@@ -1,4 +1,5 @@
 export type Attendee = {
   name: string,
-  timeSubscribed: string,
+  last_name: string,
+  work_position: string
 }

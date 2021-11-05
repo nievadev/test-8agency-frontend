@@ -2,5 +2,18 @@
   <div class="invisible mt-3">
     .
   </div>
-  <div *ngFor="let attendee of attendees$ | async">{{ attendee.name }}</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre completo</th>
+        <th scope="col">Puesto de trabajo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let attendee of attendees$ | async">
+        <td>{{ attendee.last_name }}, {{ attendee.name }}</td>
+        <td>{{ attendee.work_position }}</td>
+      </tr>
+    </tbody>
+  </table>
 </main>

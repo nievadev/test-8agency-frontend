@@ -1,3 +1,15 @@
 :host {
   flex: 1;
 }
+
+main {
+  font-family: 'Proxima Nova Regular';
+}
+
+thead {
+  color: rgb(0, 105, 119);
+}
+
+tbody {
+  color: #405457;
+}

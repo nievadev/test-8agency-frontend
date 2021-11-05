@@ -11,10 +11,6 @@ export class FormService {
   constructor(private http: HttpClient) { }
 
   postData(formData: Object): Observable<Object> {
-    return this.http.post(environment.apiUrl + '/attendees/', JSON.stringify(formData), {
-      'headers': {
-        'content-type': 'application/json'
-      }
-    });
+    return this.http.post(environment.apiUrl + '/attendees/', formData);
   }
 }

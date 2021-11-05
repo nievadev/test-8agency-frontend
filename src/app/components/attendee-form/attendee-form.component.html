@@ -73,7 +73,7 @@
   <div>
     <label for="phone-number">Número de teléfono</label><br>
 
-    <input type="number" name="phone-number" id="phone-number" placeholder="2914141794" formControlName="phoneNumber" required>
+    <input (keypress)="($event.charCode >= 48 && $event.charCode < 58)" type="text" name="phone-number" id="phone-number" placeholder="2914141794" formControlName="phoneNumber" required>
 
     <attendee-invalid-message
       [condition]="controls.phoneNumber.touched && controls.phoneNumber.invalid"
@@ -99,9 +99,4 @@
 
 
   <button type="submit" [disabled]="!attendeeForm.valid" class="submit-button" [class.submit-button--disabled]="!attendeeForm.valid">Inscríbete</button>
-
-  <article *ngIf="isDevMode()">
-    {{ attendeeForm.value | json }}
-    {{ attendeeForm.status }}
-  </article>
 </form>
